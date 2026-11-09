@@ -1,0 +1,128 @@
+/* Set a consistent starting point for every page. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+}
+main { flex: 1; }
+
+/* Shared navigation appears on all five pages. */
+nav {
+    min-height: 70px;
+    padding: 12px 8%;
+    background-color: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+nav h2 { font-size: 25px; }
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+}
+nav a { color: white; text-decoration: none; }
+nav a:hover, nav a[aria-current="page"] { color: #55d8e8; }
+button, .button { cursor: pointer; }
+#themeButton { padding: 8px 12px; border: 0; border-radius: 5px; }
+
+/* The Home page introduction. */
+.home {
+    min-height: 80vh;
+    padding: 40px 10%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+.home p { margin: 14px 0; font-size: 18px; }
+.home h1 { color: #008da5; font-size: 64px; }
+.home h3 { font-size: 23px; }
+.button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 22px;
+    border-radius: 5px;
+    background-color: #008da5;
+    color: white;
+    text-decoration: none;
+}
+.button:hover, form button:hover { background-color: #006c7e; }
+
+/* Shared section layout for About, Skills, Projects, and Contact. */
+section { padding: 70px 10%; text-align: center; }
+section h1 { margin-bottom: 25px; font-size: 32px; }
+.about-text { max-width: 650px; margin: auto; line-height: 1.7; }
+.card-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+.card {
+    min-width: 150px;
+    padding: 20px 28px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 3px 10px #00000015;
+}
+.project { width: 250px; }
+.project h2 { margin-bottom: 12px; font-size: 22px; }
+.project p { line-height: 1.5; }
+.card small { display: inline-block; margin-top: 6px; font-weight: normal; }
+
+/* Contact form layout. */
+.contact-intro { margin: -10px 0 20px; }
+form {
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font: inherit;
+}
+textarea { min-height: 120px; resize: vertical; }
+form button {
+    padding: 12px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #008da5;
+    color: white;
+    font-size: 16px;
+}
+#formMessage { min-height: 24px; margin-top: 15px; font-weight: bold; }
+footer { padding: 22px; background-color: #222; color: white; text-align: center; }
+
+/* JavaScript adds this class when the theme button is clicked. */
+.dark-mode { background-color: #171a1f; color: #f5f5f5; }
+.dark-mode .card { background-color: #272c33; }
+
+/* Adjust the layout for narrow phone screens. */
+@media (max-width: 650px) {
+    nav { flex-wrap: wrap; justify-content: center; }
+    nav ul { justify-content: center; gap: 12px; }
+    .home h1 { font-size: 48px; }
+    section { padding: 55px 7%; }
+}

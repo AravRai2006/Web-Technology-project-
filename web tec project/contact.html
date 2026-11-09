@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arav Rai | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2>Arav Rai</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a aria-current="page" href="contact.html">Contact</a></li>
+        </ul>
+        <button id="themeButton" type="button" aria-label="Switch color theme">🌙</button>
+    </nav>
+    <main>
+        <section>
+            <h1>Contact Me</h1>
+            <p class="contact-intro">Use the form below to leave a message.</p>
+            <form id="contactForm">
+                <label for="name">Your name</label>
+                <input id="name" type="text" placeholder="Enter your name" required>
+                <label for="email">Your email</label>
+                <input id="email" type="email" placeholder="Enter your email" required>
+                <label for="message">Your message</label>
+                <textarea id="message" placeholder="Write a message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="formMessage" role="status"></p>
+        </section>
+    </main>
+    <footer><p>© 2026 Arav Rai | Portfolio</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
